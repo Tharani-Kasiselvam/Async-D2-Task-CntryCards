@@ -19,9 +19,8 @@ function result(data1){
         var population = data1[i].population
         var flag = data1[i].flag
         col.innerHTML=`<div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${countryname}</h5>
+            <div class="card-body">
+            <h5 class="card-title" style="text-align:center">${countryname}</h5>
             <p class="card-text">Capital: ${capital}<br>
             Region: ${region}<br>
             Population: ${population}<br>

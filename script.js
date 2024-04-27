@@ -22,7 +22,7 @@ function result(data1){
         var flag = flagList.png
         
         col.innerHTML=`
-            <div class="card border-primary mb-3" style="width: 18rem; height:280px; text-align:center;background-color:#D6C5A0">
+            <div class="card border-primary mb-3" style="width: 18rem; height:330px; text-align:center;background-color:#D6C5A0">
             <h5 class="card-title bg-dark" style="color:white">${countryname}</h5>
             <img src=${flag} class="card-img-top" alt="..." style="width:200px; height:100px;margin-left:50px;margin-top:5px">
             <div class="card-body">
@@ -30,6 +30,7 @@ function result(data1){
             <b>Region:</b> ${region}<br>
             <b>Country Code:</b> ${cntcode}<br>
             <b>LatLng:</b> ${latlng}<br>
+            <button class="btn btn-primary" style="margin-top:5px">Weather</button>
             </p>
         </div>
         </div>`

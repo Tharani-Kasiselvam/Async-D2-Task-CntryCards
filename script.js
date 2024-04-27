@@ -16,15 +16,20 @@ function result(data1){
         var countryname = data1[i].name.common
         var capital = data1[i].capital[0]
         var region = data1[i].region
-        var population = data1[i].population
-        var flag = data1[i].flag
-        col.innerHTML=`<div class="card border-primary mb-3" style="width: 18rem; text-align:center;">
-            <div class="card-body">
+        var cntcode = data1[i].cca2
+        var latlng = data1[i].latlng
+        var flagList = data1[i].flags
+        var flag = flagList.png
+        
+        col.innerHTML=`
+            <div class="card border-primary mb-3" style="width: 18rem; height:280px; text-align:center;background-color:#D6C5A0">
             <h5 class="card-title bg-dark" style="color:white">${countryname}</h5>
-            <p class="card-text"  style="color:black">Capital: ${capital}<br>
-            Region: ${region}<br>
-            Population: ${population}<br>
-            Flag: ${flag}
+            <img src=${flag} class="card-img-top" alt="..." style="width:200px; height:100px;margin-left:50px;margin-top:5px">
+            <div class="card-body">
+            <p class="card-text"  style="color:black"><b>Capital:</b> ${capital}<br>
+            <b>Region:</b> ${region}<br>
+            <b>Country Code:</b> ${cntcode}<br>
+            <b>LatLng:</b> ${latlng}<br>
             </p>
         </div>
         </div>`

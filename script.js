@@ -22,15 +22,16 @@ function result(data1){
         var flag = flagList.png
         
         col.innerHTML=`
-            <div class="card border-primary mb-3" style="width: 18rem; height:330px; text-align:center;background-color:#D6C5A0">
+            <div class="card border-primary mb-3" style="width: 18rem; height:380px; text-align:center;background-color:#D6C5A0">
             <h5 class="card-title bg-dark" style="color:white">${countryname}</h5>
             <img src=${flag} class="card-img-top" alt="..." style="width:200px; height:100px;margin-left:50px;margin-top:5px">
             <div class="card-body">
             <p class="card-text"  style="color:black"><b>Capital:</b> ${capital}<br>
             <b>Region:</b> ${region}<br>
             <b>Country Code:</b> ${cntcode}<br>
-            <b>LatLng:</b> ${latlng}<br>
-            <button class="btn btn-primary" style="margin-top:5px">Weather</button>
+            <b>Latitude:</b> ${latlng[0]}<br>
+            <b>Longitude:</b> ${latlng[1]}<br>
+            <button class="btn btn-primary" onclick="weatherdata(${latlng[0]},${latlng[1]})" style="margin-top:5px">Click for Weather</button>
             </p>
         </div>
         </div>`
@@ -40,4 +41,11 @@ function result(data1){
     }
 }
 
+async function weatherdata(lat,long) {
+    let wdata = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=dcfc512ae960fa52bdc4db8a6c6dff1f`)
+    let weather = await wdata.json()
+    console.log(weather.main.temp)
+    // alert(`The Weather of ${key} is ${weather.main.temp}`)
+    alert(`The Weather is : ${weather.main.temp}`)
+  }
 //countryname, capital, region,flag, population
